@@ -1,8 +1,17 @@
 import React from "react"
+import {Routes,Route} from "react-router-dom"
+import Header from "./components/Header/Header";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
-   <h1>hello</h1>
+   <div className='wrapper'>
+   <Header/>
+   <Routes>
+    <Route path="/" element={<Home/>}/>
+   </Routes>
+   </div>
   );
 }
 
