@@ -1,0 +1,40 @@
+@use '../variables'as v;
+
+.home {
+    max-width: 1300px;
+    margin: 110px auto;
+    position: relative;
+
+    .header {
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: 14px;
+            margin-bottom: 20px;
+
+            a {
+                margin: 0 30px;
+                color: v.$text-second-color;
+            }
+        }
+
+        .content:before {
+            content: '';
+            height: 1px;
+            width: 100%;
+            display: block;
+            background-color: v.$opacity-line-color;
+        }
+
+        .content::after {
+            content: '';
+            height: 1px;
+            width: 100%;
+            display: block;
+            background-color: v.$opacity-line-color;
+        }
+    }
+}

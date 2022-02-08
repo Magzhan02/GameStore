@@ -17,6 +17,10 @@ a{
     color: v.$text-color;
 }
 
+li{
+   list-style: none;
+}
+
 
 body {
     background: v.$backround-color;
@@ -27,7 +31,7 @@ body {
 }
 
 .wrapper{
-    width:1700px;
+    width: 1700px;
 }
 
 

@@ -4,9 +4,12 @@
     display: flex;
     align-items: center;
     padding: 30px;
-    position: fixed;
-    padding:40px;
     width: 1700px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 
     .logo {
         margin-left: 80px;
@@ -56,7 +59,6 @@
         }
 
     }
-
     .favorite {
         margin-left: 250px;
 
@@ -69,12 +71,10 @@
     .cart {
         margin-left: 50px;
         position: relative;
-
         .cartIcon {
             color: v.$icon-main-color;
             cursor: pointer;
         }
-
         span {
             top: 10px;
             position: absolute;

@@ -9,10 +9,11 @@ function App() {
    <div className='wrapper'>
    <Header/>
    <Routes>
-    <Route path="/" element={<Home/>}/>
+      <Route path="/" element={<Home/>}/>
    </Routes>
    </div>
   );
 }
 
 export default App;
+ 
