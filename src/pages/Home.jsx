@@ -1,15 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import {useDispatch,useSelector} from "react-redux";
 
 import style from './Home.module.scss';
+
+import {fetchItems} from '../redux/reducers/itemsReducer';
 import Sort from '../components/Sort/Sort';
+import Card from '../components/Card/Card';
 
 function Home() {
-  React.useEffect(async () => {
-    const { data } = await axios.get('http://localhost:3001/items');
-    console.log(data);
-  }, []);
+  const dispatch = useDispatch();
+  const { items } = useSelector(({ items }) => items);
+
+  React.useEffect(() => {
+    dispatch(fetchItems());
+  }, [dispatch]);
 
   return (
     <div className={style.home}>
@@ -17,9 +22,10 @@ function Home() {
         <div className={style.content}>
           <Link to="/">Главная</Link>
         </div>
-       <Sort/>
+        <Sort />
       </div>
       <div className={style.catalog}>
+        {items.length > 0 && items.map((items) => <Card key={items.id} {...items} />)}
       </div>
     </div>
   );

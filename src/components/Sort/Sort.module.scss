@@ -37,6 +37,7 @@
         background: v.$backround-popup-color;
         font-size: 15px;
         font-weight: 400;
+        z-index: 99;
 
         .current {
             color: v.$text-color;

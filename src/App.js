@@ -1,10 +1,11 @@
 import React from "react"
-import {Routes,Route} from "react-router-dom"
-import Header from "./components/Header/Header";
+import {Routes,Route} from "react-router-dom";
 
+import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 
 function App() {
+  
   return (
    <div className='wrapper'>
    <Header/>

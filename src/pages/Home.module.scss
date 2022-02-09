@@ -37,4 +37,10 @@
             background-color: v.$opacity-line-color;
         }
     }
+
+    .catalog{
+        margin: 90px 90px;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
