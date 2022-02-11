@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from './Sort.module.scss'
+import style from './Sort.module.scss';
 
 function Sort() {
   const [toggle, setToggle] = React.useState(false);
@@ -35,6 +35,7 @@ function Sort() {
       <h1>ЛИДЕРЫ ПРОДАЖ</h1>
       <div className={toggle ? style.open : style.popup} onClick={toggleSet}>
         <span className={style.current}>{selected}</span>
+        <img width={10} height={10} src="./assets/down-arrow.png" alt="arrow" className={ toggle ? style.arrowUp : style.arrow}/>
         <ul className={style.list} onClick={(e) => setActive(e)}>
           <li data-value="0" className="option">
             Все цены
