@@ -3,8 +3,19 @@ import { MdFavoriteBorder } from 'react-icons/md';
 
 import style from './Card.module.scss';
 
-function Card({ name, imageUrl, price }) {
+function Card({ id,name, imageUrl, price,addItemToCart }) {
   const [isShow, setIsShow] = React.useState(false);
+
+  const onAdd = () => {
+    const obj = {
+      id,
+      name,
+      imageUrl,
+      price
+    };
+    addItemToCart(obj);
+  };
+
   return (
     <div
       className={style.wrapper}
@@ -16,7 +27,7 @@ function Card({ name, imageUrl, price }) {
         <div className={style.price}>{price} &#8376;</div>
         {isShow && (
           <>
-            <div className={style.toCart}>В КОРЗИНУ</div>
+            <div className={style.toCart} onClick={onAdd} >В КОРЗИНУ</div>
             <div className={style.iconFavorite}>
               <MdFavoriteBorder size={26} />
             </div>

@@ -2,7 +2,8 @@ import React from "react"
 import {Routes,Route} from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import Home from "./pages/Home";
+
+import { Home,Cart,Favorite } from './pages'
 
 function App() {
   
@@ -11,6 +12,8 @@ function App() {
    <Header/>
    <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/cart" element={<Cart/>} />
+      <Route path="/favorite" element={<Favorite/>} />
    </Routes>
    </div>
   );

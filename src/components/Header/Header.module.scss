@@ -62,10 +62,16 @@
     }
     .favorite {
         margin-left: 250px;
-
+        position: relative;
         .icon {
             color: v.$icon-main-color;
             cursor: pointer;
+        }
+        span {
+            top: 10px;
+            position: absolute;
+            font-size: 12px;
+            color: v.$text-second-color;
         }
     }
 

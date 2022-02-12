@@ -1,0 +1,86 @@
+@use '../variables'as v;
+
+.cart {
+    margin-left: 200px;
+    width: 1500px;
+    .header {
+        margin: 11% 0 30px 0;
+
+        h1 {
+            color: v.$text-color;
+
+            span {
+                margin-left: 10px;
+                color: v.$text-second-color;
+            }
+        }
+    }
+    .main{
+        display: flex;
+        flex-direction: row;
+
+        .card{
+            border-bottom: 1px solid v.$line-color;
+            margin-bottom: 10px;
+            width: 800px;
+        }
+
+        .total{
+            width: 300px;
+            height: 100px;
+            margin-left: 100px;
+            border: 1px solid v.$line-color;
+            border-radius: 6px;
+            color: v.$text-color;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: v.$backround-second-color;
+
+            h2{
+                font-size: 28px;
+            }
+
+            .totalPrice{
+                font-size: 24px;
+                font-weight: 700;
+                color: v.$text-second-color;
+            }
+        }
+    }
+
+    .empty{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        h1{
+            color: v.$text-color;
+        }
+        .btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-10%);
+            margin-top: 50px;
+            background: v.$text-second-color;
+            color: v.$input-text-color;
+            width: 210px;
+            height: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn:hover{
+            background: v.$text-color;
+        }
+        
+    }
+    
+    
+}

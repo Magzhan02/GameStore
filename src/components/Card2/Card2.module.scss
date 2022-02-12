@@ -1,0 +1,39 @@
+@use '../..//variables'as v;
+.card {
+        width: 800px;
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid v.$line-color;
+        padding:30px 0 30px 0 ;
+        position: relative;
+
+        .img{
+            margin-right: 40px;
+            img{
+                border-radius: 11px;
+            }
+        }
+
+        .desc{
+            color: v.$text-color;
+            .name{
+                margin-bottom: 20px;
+                font-size: 26px;
+                font-weight: 500;
+            }
+
+            .price{
+                font-size: 21px;
+                font-weight: 500;
+
+            }
+        }
+
+        .icon{
+            position: absolute;
+            top: 20px;
+            right: 1px;
+            color: v.$text-color;
+            cursor: pointer;
+        }
+    }

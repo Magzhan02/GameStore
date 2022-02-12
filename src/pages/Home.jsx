@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {useDispatch,useSelector} from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
 import style from './Home.module.scss';
 
-import {fetchItems} from '../redux/reducers/itemsReducer';
+import { fetchItems } from '../redux/reducers/itemsReducer';
+import { setToCartAC } from '../redux/reducers/cartReducer';
+
 import Sort from '../components/Sort/Sort';
 import Card from '../components/Card/Card';
 
@@ -16,6 +18,12 @@ function Home() {
     dispatch(fetchItems());
   }, [dispatch]);
 
+  const addItemToCart = (obj) => {
+    dispatch(setToCartAC(obj));
+  };
+
+  
+
   return (
     <div className={style.home}>
       <div className={style.header}>
@@ -25,7 +33,8 @@ function Home() {
         <Sort />
       </div>
       <div className={style.catalog}>
-        {items.length > 0 && items.map((items) => <Card key={items.id} {...items} />)}
+        {items.length > 0 &&
+        items.map((items) => <Card key={items.id} addItemToCart={addItemToCart} {...items} />)}
       </div>
     </div>
   );

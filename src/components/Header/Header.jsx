@@ -1,11 +1,16 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import { BsSearch, BsCart } from 'react-icons/bs';
 import { MdFavoriteBorder } from 'react-icons/md';
 
 import style from './Header.module.scss';
 
 function Header() {
+  const { totalCount } = useSelector(({ cart }) => cart);
+
   return (
     <div className={style.header}>
       <div className={style.logo}>
@@ -23,13 +28,18 @@ function Header() {
       </div>
       <div className={style.favorite}>
         <div className={style.icon}>
-          <MdFavoriteBorder size={24} />
+          <Link to="favorite">
+            <MdFavoriteBorder size={24} />
+            <span>0</span>
+          </Link>
         </div>
       </div>
       <div className={style.cart}>
         <div className={style.cartIcon}>
-          <BsCart size={24} />
-          <span>0</span>
+          <Link to="cart">
+            <BsCart size={24} />
+            <span>{totalCount}</span>
+          </Link>
         </div>
       </div>
     </div>
