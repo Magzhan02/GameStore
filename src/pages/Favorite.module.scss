@@ -1,0 +1,44 @@
+@use '../variables'as v;
+
+.favorite {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 10% 8%;
+    overflow: hidden;
+
+    .empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h2 {
+            color: v.$text-color;
+            font-size: 28px;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -10%);
+            margin-top: 50px;
+            background: v.$text-second-color;
+            color: v.$input-text-color;
+            width: 210px;
+            height: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: v.$text-color;
+        }
+    }
+}

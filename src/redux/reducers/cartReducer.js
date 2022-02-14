@@ -62,7 +62,7 @@ export const setToCartAC = (obj) => ({
 export const removeItemAC = (id) =>({
     type: REMOVE_ITEM,
     payload: id
-})
+});
 
 
 export default cart;

@@ -9,7 +9,8 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import style from './Header.module.scss';
 
 function Header() {
-  const { totalCount } = useSelector(({ cart }) => cart);
+  const cart = useSelector(({ cart }) => cart);
+  const favorite = useSelector(({ favorite }) => favorite);
 
   return (
     <div className={style.header}>
@@ -30,7 +31,7 @@ function Header() {
         <div className={style.icon}>
           <Link to="favorite">
             <MdFavoriteBorder size={24} />
-            <span>0</span>
+            <span>{favorite.totalCount}</span>
           </Link>
         </div>
       </div>
@@ -38,7 +39,7 @@ function Header() {
         <div className={style.cartIcon}>
           <Link to="cart">
             <BsCart size={24} />
-            <span>{totalCount}</span>
+            <span>{cart.totalCount}</span>
           </Link>
         </div>
       </div>
