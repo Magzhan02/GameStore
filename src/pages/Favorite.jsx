@@ -22,7 +22,7 @@ function Favorite() {
   return (
     <div className={style.favorite}>
       {totalCount ? (
-        selectItems.map((items) => <Card key={items.id} removeItem={removeItem} active={true} {...items} />)
+        selectItems.map((items) => <Card key={items.id} removeItem={removeItem} {...items} active={true} />)
       ) : (
         <div className={style.empty}>
           <h2>В ВАШЕМ ИЗБРАННОМ ПОКА ПУСТО :(</h2>

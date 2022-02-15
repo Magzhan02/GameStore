@@ -45,7 +45,7 @@ function Cart() {
         </>
       ) : (
         <div className={style.empty}>
-          <h1>В ВАШЕЙ КОРЗИНЕ ЕЩЕ НИЧЕГО НЕТ :(</h1>
+          <h2>В ВАШЕЙ КОРЗИНЕ ЕЩЕ НИЧЕГО НЕТ :(</h2>
           <Link to="/">
           <div className={style.btn}>
             ПЕРЕЙТИ В КАТАЛОГ

@@ -7,6 +7,9 @@
     h1 {
         color: v.$text-color;
         font-weight: 500;
+        position: relative;
+        top: 0;
+        left: 6%;
     }
 
     .popup {

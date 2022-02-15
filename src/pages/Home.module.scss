@@ -1,7 +1,7 @@
 @use '../variables'as v;
 
 .home {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 110px auto;
     position: relative;
 
@@ -16,7 +16,7 @@
             margin-bottom: 20px;
 
             a {
-                margin: 0 30px;
+                margin: 0 30px ;
                 color: v.$text-second-color;
             }
         }
@@ -39,8 +39,8 @@
     }
 
     .catalog{
-        margin: 90px 90px;
         display: flex;
         flex-wrap: wrap;
+        margin-top: 6%;
     }
 }

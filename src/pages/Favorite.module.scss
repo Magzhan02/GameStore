@@ -3,16 +3,15 @@
 .favorite {
     display: flex;
     flex-wrap: wrap;
-    width: 90vw;
-    margin: 10% 8%;
+    width: 1700px ;
+    padding: 150px 0 0 150px;
     overflow: hidden;
-
+    
     .empty {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
         h2 {
             color: v.$text-color;
             font-size: 28px;
