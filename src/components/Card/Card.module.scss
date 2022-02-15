@@ -42,6 +42,7 @@
             color: v.$input-text-color;
             font-weight: 500;
             cursor: pointer;
+
         }
 
         .iconFavorite {
@@ -55,13 +56,25 @@
 
         .toCart:hover{
             background: v.$icon-main-color;
+            
         }
         .iconFavorite:hover{
             color: v.$hover-color;
         }
 
         .active{
-            display: none;
+            .toCart {
+                display: none;
+            }
+    
+            .iconFavorite {
+                position: absolute;
+                z-index: 10;
+                top: 15px;
+                left: 210px;
+                cursor: pointer;
+                color: v.$hover-color;
+            }
         }
 
     }

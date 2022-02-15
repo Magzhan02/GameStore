@@ -26,6 +26,7 @@ function Home() {
   const addItemToFavor = (obj) => {
     dispatch(setToFavorAC(obj));
   };
+
   return (
     <div className={style.home}>
       <div className={style.header}>
@@ -36,7 +37,14 @@ function Home() {
       </div>
       <div className={style.catalog}>
         {items.length > 0 &&
-        items.map((items) => <Card key={items.id} addItemToCart={addItemToCart} addItemToFavor={addItemToFavor} {...items} />)}
+          items.map((items) => (
+            <Card
+              key={items.id}
+              addItemToCart={addItemToCart}
+              addItemToFavor={addItemToFavor}
+              {...items}
+            />
+          ))}
       </div>
     </div>
   );
