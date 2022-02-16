@@ -10,7 +10,7 @@ import Card2 from '../components/Card2/Card2';
 
 import { removeItemAC } from '../redux/reducers/cartReducer';
 
-function Cart() {
+function Cart({search}) {
   const dispatch = useDispatch();
 
   const { items, totalPrice, totalCount } = useSelector(({ cart }) => cart);
@@ -33,7 +33,9 @@ function Cart() {
       </div>
         <div className={style.main}>
           <div className={style.card}>
-            {selectItems.map((items) => (
+            {selectItems
+            .filter((items) => items.name.toLowerCase().includes(search.toLowerCase()))
+            .map((items) => (
               <Card2 key={items.id} removeItem={removeItem} {...items} />
             ))}
           </div>

@@ -9,7 +9,7 @@ import { removeFromFavorAC } from '../redux/reducers/favoriteReducer';
 import useSelect from '../Hooks/useSelect';
 import Card from '../components/Card/Card';
 
-function Favorite() {
+function Favorite({search}) {
   const dispatch = useDispatch();
   const { items, totalCount } = useSelector(({ favorite }) => favorite);
 
@@ -22,7 +22,9 @@ function Favorite() {
   return (
     <div className={style.favorite}>
       {totalCount ? (
-        selectItems.map((items) => <Card key={items.id} removeItem={removeItem} {...items} active={true} />)
+        selectItems
+        .filter((items) => items.name.toLowerCase().includes(search.toLowerCase()))
+        .map((items) => <Card key={items.id} removeItem={removeItem} {...items} active={true} />)
       ) : (
         <div className={style.empty}>
           <h2>В ВАШЕМ ИЗБРАННОМ ПОКА ПУСТО :(</h2>

@@ -8,7 +8,7 @@ import { MdFavoriteBorder } from 'react-icons/md';
 
 import style from './Header.module.scss';
 
-function Header() {
+function Header({searchInput,search}) {
   const cart = useSelector(({ cart }) => cart);
   const favorite = useSelector(({ favorite }) => favorite);
 
@@ -21,7 +21,7 @@ function Header() {
       </div>
       <div className={style.search}>
         <form>
-          <input type="text" />
+          <input type="text" onChange={searchInput} value={search}/>
           <div className={style.searchBtn}>
             <BsSearch />
           </div>

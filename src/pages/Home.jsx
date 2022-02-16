@@ -11,8 +11,9 @@ import { setToFavorAC } from '../redux/reducers/favoriteReducer';
 import Sort from '../components/Sort/Sort';
 import Card from '../components/Card/Card';
 
-function Home() {
+function Home({search}) {
   const dispatch = useDispatch();
+
   const { items } = useSelector(({ items }) => items);
 
   React.useEffect(() => {
@@ -37,7 +38,9 @@ function Home() {
       </div>
       <div className={style.catalog}>
         {items.length > 0 &&
-          items.map((items) => (
+          items
+          .filter((items) => items.name.toLowerCase().includes(search.toLowerCase()))
+          .map((items) => (
             <Card
               key={items.id}
               addItemToCart={addItemToCart}
