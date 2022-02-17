@@ -3,7 +3,7 @@ import axios from 'axios';
 const SET_ITEM_TO_STATE = "SET_ITEM_TO_STATE";
 
 const initialState = {
-    items: []
+    items: [],
 };
 
 const items = (state = initialState, action) => {
@@ -19,13 +19,17 @@ const items = (state = initialState, action) => {
     }
 }
 
-export const setItemsAC = (items) => ({type:'SET_ITEM_TO_STATE',payload: items})
+export const setItemsAC = (items) => ({
+    type: 'SET_ITEM_TO_STATE',
+    payload: items
+});
 
-export const fetchItems = () => (dispatch) => {
-    axios.get('http://localhost:3001/items')
+export const fetchItems = (sortBy) => (dispatch) => {
+    axios.get(`http://localhost:3001/items?_sort=${sortBy.type}&_order=${sortBy.order}`)
         .then((res) => {
             dispatch(setItemsAC(res.data));
         });
 };
+
 
 export default items;

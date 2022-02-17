@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './Sort.module.scss';
 
-function Sort() {
+function Sort({ sortBy,selectType }) {
   const [toggle, setToggle] = React.useState(false);
   const [selected, setSelected] = React.useState('По цене');
   const sortRef = React.useRef();
@@ -35,17 +35,25 @@ function Sort() {
       <h1>ЛИДЕРЫ ПРОДАЖ</h1>
       <div className={toggle ? style.open : style.popup} onClick={toggleSet}>
         <span className={style.current}>{selected}</span>
-        <img width={10} height={10} src="./assets/down-arrow.png" alt="arrow" className={ toggle ? style.arrowUp : style.arrow}/>
-        <ul className={style.list} onClick={(e) => setActive(e)}>
-          <li data-value="0" className="option">
-            По цене
-          </li>
-          <li data-value="1" className="option">
-            По алфавиту
-          </li>
-          <li data-value="2" className="option">
-            По популярности
-          </li>
+        <img
+          width={10}
+          height={10}
+          src="./assets/down-arrow.png"
+          alt="arrow"
+          className={toggle ? style.arrowUp : style.arrow}
+        />
+        <ul className={style.list} onClick={setActive}>
+          {sortBy &&
+            sortBy.map((obj, index) => (
+              <li
+                className={style.option}
+                key={`${obj.type}_${index}`}
+                onClick={() => selectType(obj)}
+                >
+                По {obj.name}
+              </li>
+            ))
+            }
         </ul>
       </div>
     </div>
