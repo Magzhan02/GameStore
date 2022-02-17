@@ -4,10 +4,6 @@ import { BsX } from 'react-icons/bs';
 import style from './Card2.module.scss'
 
 function Cart({name,price,imageUrl,id,removeItem}) {
-
-  const onRemove = () => {
-    removeItem(id);
-  };
   return (
     <div className={style.card}>
       <div className={style.img}>
@@ -17,7 +13,7 @@ function Cart({name,price,imageUrl,id,removeItem}) {
         <h2 className={style.name}>{name}</h2>
         <div className={style.price}>{price} &#8376;</div>
       </div>
-      <div className={style.icon} onClick={onRemove}>
+      <div className={style.icon} onClick={() => removeItem(id)}>
         <BsX size={50} />
       </div>
     </div>

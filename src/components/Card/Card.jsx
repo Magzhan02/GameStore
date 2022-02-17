@@ -4,34 +4,15 @@ import { BsX } from 'react-icons/bs';
 
 import style from './Card.module.scss';
 
-function Card({ id, name, imageUrl, price, addItemToCart, addItemToFavor, active,removeItem }) {
-
+function Card({ id, name, imageUrl, price, addItemToCart, addItemToFavor, active, removeItem }) {
   const [isShow, setIsShow] = React.useState(false);
   
-  const onAddToCart = () => {
-    const obj = {
-      id,
-      name,
-      imageUrl,
-      price,
-    };
-
-    addItemToCart(obj);
+  const obj = {
+    id,
+    name,
+    imageUrl,
+    price,
   };
-
-  const onAddToFavor = () => {
-    const obj = {
-      id,
-      name,
-      imageUrl,
-      price,
-    };
-      addItemToFavor(obj);
-  };
-
-  const removeFavor = () =>{
-    removeItem(id)
-  }
 
   return (
     <div
@@ -44,11 +25,15 @@ function Card({ id, name, imageUrl, price, addItemToCart, addItemToFavor, active
         <div className={style.price}>{price} &#8376;</div>
         {isShow && (
           <div className={active ? style.active : style.btn}>
-            <div className={style.toCart} onClick={onAddToCart}>
+            <div className={style.toCart} onClick={() => addItemToCart(obj)}>
               В КОРЗИНУ
             </div>
-            <div className={style.iconFavorite} >
-              {active ? <BsX size={36} onClick={removeFavor} /> : <MdFavoriteBorder size={26} onClick={onAddToFavor} />}
+            <div className={style.iconFavorite}>
+              {active ? (
+                <BsX size={36} onClick={() => removeItem(id)} />
+              ) : (
+                <MdFavoriteBorder size={26} onClick={() => addItemToFavor(obj)} />
+              )}
             </div>
           </div>
         )}

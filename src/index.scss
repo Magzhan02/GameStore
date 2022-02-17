@@ -1,4 +1,4 @@
-@use './variables' as v;
+@use './variables'as v;
 
 html {
     box-sizing: border-box;
@@ -12,13 +12,13 @@ html {
     padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: v.$text-color;
 }
 
-li{
-   list-style: none;
+li {
+    list-style: none;
 }
 
 
@@ -30,9 +30,16 @@ body {
     font-weight: 400;
 }
 
-.wrapper{
-    width: 1700px;
+::-webkit-scrollbar {
+    background: v.$backround-color;
+    width: 8px;
 }
 
+::-webkit-scrollbar-thumb {
+    background: v.$btn-color;
+    border-radius: 10px;
+}
 
-
+.wrapper {
+    width: 1700px;
+}
