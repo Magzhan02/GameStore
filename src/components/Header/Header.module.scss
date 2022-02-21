@@ -1,4 +1,4 @@
-@use '../../variables'as v;
+@use '../../scss/variables'as v;
 
 .header {
     display: flex;
@@ -60,8 +60,18 @@
         }
 
     }
+    .user{
+        margin-left: 200px;
+        position: relative;
+
+        .userIcon{
+            color: v.$icon-main-color;
+            cursor: pointer;
+        }
+    }
+
     .favorite {
-        margin-left: 250px;
+        margin-left: 30px;
         position: relative;
         .icon {
             color: v.$icon-main-color;
@@ -76,7 +86,7 @@
     }
 
     .cart {
-        margin-left: 50px;
+        margin-left: 30px;
         position: relative;
         .cartIcon {
             color: v.$icon-main-color;
@@ -89,4 +99,5 @@
             color: v.$text-second-color;
         }
     }
+   
 }

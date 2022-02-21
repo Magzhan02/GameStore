@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import style from './Home.module.scss';
 
-import { fetchItems } from '../redux/reducers/itemsReducer';
-import { setToCartAC } from '../redux/reducers/cartReducer';
-import { setToFavorAC } from '../redux/reducers/favoriteReducer';
-import { setFilterAC } from '../redux/reducers/filterReducer';
+import { fetchItems } from '../../redux/reducers/itemsReducer';
+import { setToCartAC } from '../../redux/reducers/cartReducer';
+import { setToFavorAC } from '../../redux/reducers/favoriteReducer';
+import { setFilterAC } from '../../redux/reducers/filterReducer';
 
-import Sort from '../components/Sort/Sort';
-import Card from '../components/Card/Card';
+import Sort from '../../components/Sort/Sort';
+import Card from '../../components/Card/Card';
 
 const sortItem = [
   { name: 'популярности', type: 'popular', order: 'desc' },
   { name: 'цене', type: 'price', order: 'desc' },
-  { name: 'алфавит', type: 'name', order: 'asc' },
+  { name: 'алфавиту', type: 'name', order: 'asc' },
 ];
 
 function Home({ search }) {

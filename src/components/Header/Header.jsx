@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { BsSearch, BsCart } from 'react-icons/bs';
 import { MdFavoriteBorder } from 'react-icons/md';
+import { BiUserCircle } from 'react-icons/bi'
 
 import style from './Header.module.scss';
 
@@ -27,6 +28,13 @@ function Header({ searchInput, search }) {
           </div>
         </form>
       </div>
+      <div className={style.user}>
+        <div className={style.userIcon}>
+          <Link to="user">
+            <BiUserCircle size={24} />
+          </Link>
+        </div>
+      </div>
       <div className={style.favorite}>
         <div className={style.icon}>
           <Link to="favorite">
@@ -43,6 +51,7 @@ function Header({ searchInput, search }) {
           </Link>
         </div>
       </div>
+     
     </div>
   );
 }

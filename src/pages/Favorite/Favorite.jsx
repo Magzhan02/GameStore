@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 import style from './Favorite.module.scss';
 
-import { removeFromFavorAC } from '../redux/reducers/favoriteReducer';
+import { removeFromFavorAC } from '../../redux/reducers/favoriteReducer';
 
-import useSelect from '../Hooks/useSelect';
-import Card from '../components/Card/Card';
+import useSelect from '../../Hooks/useSelect';
+import Card from '../../components/Card/Card';
 
 function Favorite({search}) {
   const dispatch = useDispatch();

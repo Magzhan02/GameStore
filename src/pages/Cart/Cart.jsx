@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 
 import style from './Cart.module.scss';
 
-import useSelect from '../Hooks/useSelect';
-import Card2 from '../components/Card2/Card2';
+import useSelect from '../../Hooks/useSelect';
+import Card2 from '../../components/Card2/Card2';
 
-import { removeItemAC } from '../redux/reducers/cartReducer';
+import { removeItemAC } from '../../redux/reducers/cartReducer';
 
 function Cart({search}) {
   const dispatch = useDispatch();

@@ -1,0 +1,121 @@
+@use '../../scss/variables'as v;
+
+.auth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: v.$backround-second-color;
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid v.$border-line;
+    border-radius: 11px;
+}
+
+.personalD {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: v.$backround-second-color;
+    width: 40vw;
+    height: 40vh;
+    color: v.$text-color;
+    padding: 40px 60px;
+    border: 1px solid v.$border-line;
+    border-radius: 11px;
+
+    h2 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    .data {
+        width: 300px;
+
+        .user {
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+
+            label {
+                position: absolute;
+                font-size: 12px;
+                line-height: 2.5;
+                text-transform: uppercase;
+                left: 0;
+                bottom: 20px;
+                margin-bottom: 0;
+                font-weight: 600;
+            }
+        }
+
+        .email {
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+
+            label {
+                position: absolute;
+                font-size: 12px;
+                line-height: 2.5;
+                text-transform: uppercase;
+                left: 0;
+                bottom: 40px;
+                margin-bottom: 0;
+                font-weight: 600;
+            }
+
+            .description {
+                font-size: 10px;
+                text-align: end;
+                margin-top: 5px;
+            }
+        }
+
+        input {
+            border: none;
+            background: v.$backround-second-color;
+            border-bottom: 1px solid v.$text-second-color;
+            width: 100%;
+            color: v.$text-color;
+            font-size: 16px;
+            padding-bottom: 5px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+
+    .btn {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        margin-top: 40px;
+
+        button {
+            width: 100px;
+            height: 35px;
+            border: 1px solid v.$text-second-color;
+            background: v.$backround-color;
+            color: v.$text-color;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: v.$input-hover-color;
+            color: v.$input-text-color;
+        }
+    }
+}

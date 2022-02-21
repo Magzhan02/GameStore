@@ -4,7 +4,7 @@ import style from './Sort.module.scss';
 
 function Sort({ sortBy,selectType }) {
   const [toggle, setToggle] = React.useState(false);
-  const [selected, setSelected] = React.useState('По цене');
+  const [selected, setSelected] = React.useState('По популярности');
   const sortRef = React.useRef();
 
   const toggleSet = () => {
