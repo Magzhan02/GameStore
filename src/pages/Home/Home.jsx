@@ -8,9 +8,12 @@ import { fetchItems } from '../../redux/reducers/itemsReducer';
 import { setToCartAC } from '../../redux/reducers/cartReducer';
 import { setToFavorAC } from '../../redux/reducers/favoriteReducer';
 import { setFilterAC } from '../../redux/reducers/filterReducer';
+import { setUserAC } from '../../redux/reducers/registerReducer'
 
 import Sort from '../../components/Sort/Sort';
 import Card from '../../components/Card/Card';
+
+import GetLocalStorage from '../../GetLocalStorage';
 
 const sortItem = [
   { name: 'популярности', type: 'popular', order: 'desc' },
@@ -26,6 +29,10 @@ function Home({ search }) {
   React.useEffect(() => {
     dispatch(fetchItems(sortBy));
   }, [sortBy]);
+
+  React.useEffect(() =>{
+    dispatch(setUserAC(GetLocalStorage()))
+  },[])
 
   const selectType = (obj) =>{
     dispatch(setFilterAC(obj))

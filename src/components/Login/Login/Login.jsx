@@ -6,13 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import style from './Login.module.scss';
 
 import { setUserAC } from '../../../redux/reducers/registerReducer';
-
 import FormLog from '../Form/FormLog';
+import setLocalStorage from '../../../setLocalStorage';
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const auth = getAuth();
 
   const handleAuth = (email, password) => {
@@ -24,9 +23,10 @@ function Login() {
           token: user.accessToken,
         };
         dispatch(setUserAC(obj));
+        setLocalStorage(obj);
         navigate('/');
       })
-    .catch(console.error)
+      .catch(console.error);
   };
 
   return (

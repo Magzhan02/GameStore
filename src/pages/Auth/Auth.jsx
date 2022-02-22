@@ -16,6 +16,7 @@ function Auth() {
 
   const logout = () =>{
     dispatch(removeUserAC())
+    localStorage.clear();
   }
   const setName = () =>{
     if(userName){

@@ -9,6 +9,7 @@ import Login from '../Login/Login';
 
 import style from './SignUp.module.scss';
 
+import setLocalStorage from '../../../setLocalStorage';
 import { setUserAC } from '../../../redux/reducers/registerReducer';
 
 function SignUp() {
@@ -27,6 +28,7 @@ function SignUp() {
         token: user.accessToken,
       };
       dispatch(setUserAC(obj));
+      setLocalStorage(obj)
       navigate('/');
     })
     .catch(console.error)
