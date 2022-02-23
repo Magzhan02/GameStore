@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 *  Redux
 *  sass/scss(modules)
 *  localStorage
+*  single page application
 *  Search, filter and sort products
 *  Login or register by email and password
 *  favorites and shopping cart 🛒
